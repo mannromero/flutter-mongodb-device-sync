@@ -1,53 +1,48 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:namer_app/src/app/helpers/app_colors.dart';
 import 'package:namer_app/src/app/pages/home/home_page_view.dart';
 import 'package:namer_app/src/app/pages/todo/todo_page_view.dart';
-class Navigation extends StatefulWidget {
-  const Navigation({super.key});
 
+@RoutePage()
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
   @override
-  State<Navigation> createState() => _NavigationState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-    child: ListView(
-      padding: EdgeInsets.zero,
-      children: <Widget>[
-        SizedBox(
-          height: 90,
-          child: DrawerHeader(
-            decoration: BoxDecoration(
-              color: Color(primaryColor),
-            ),
-            child: Text(
-              '',
-              style: TextStyle(
-                color: Color(primaryColor),
-                fontSize: 24,
-                height: 20
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(
+                'Drawer Header',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
               ),
             ),
-          ),
+            ListTile(
+              title: Text('Home'),
+              onTap: () {
+                context.router.replaceNamed('/home');
+              },
+            ),
+            ListTile(
+              title: Text('Todo'),
+              onTap: () {
+                context.router.replaceNamed('/todo');
+              },
+            ),
+          ],
         ),
-        ListTile(
-          title: Text('Item 1'),
-          onTap: () {
-            context.router.navigateNamed(HomePage.route);
-            Navigator.pop(context); // Close the drawer
-          },
-        ),
-        ListTile(
-          title: Text('Item 2'),
-          onTap: () {
-            context.router.navigateNamed(TodoPage.route);
-            Navigator.pop(context); // Close the drawer
-          },
-        ),
-      ],
-    ));
+    );
   }
 }

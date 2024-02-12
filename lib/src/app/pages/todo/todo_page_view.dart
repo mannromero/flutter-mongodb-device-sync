@@ -15,20 +15,13 @@ class _TodoPageState extends State<TodoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
-              actions: [
-                // if (state.selectedDisassembly != null)
-                //   FormButtonDelete(onDelete: () {
-                //     handleDelete(context);
-                //     context.router.pop();
-                //   })
-              ],
-              // leading: FormBackButton(onNavigate: () => context.router.pop()),
-              titleSpacing: 16.0,
-              title: const Text('Todo Page'),
-            ),
-            drawer: const Navigation(),
-            body: Text('Home Page')
+      appBar: AppBar(
+        title: const Text('Todo'),
+      ),
+      drawer: MainPage(),
+      body: const Center(
+        child: Text('Todo'),
+      ),
     );
   }
 }

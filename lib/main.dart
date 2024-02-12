@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:namer_app/src/app/routes/app_router.dart';
 import 'package:namer_app/src/app/helpers/app_colors.dart';
+import 'package:namer_app/src/core/autoroutes/routes.dart';
 void main() {
   runApp(MyApp());
 }
@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
                 secondary: Color(primaryColor),
                 onSecondary: Colors.white,
               ),
-              useMaterial3: true),         
+              useMaterial3: true),    
+              debugShowCheckedModeBanner: false,   
     );            
   }            
 }        

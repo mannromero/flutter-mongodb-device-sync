@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:namer_app/src/app/pages/todo/todo_page_view.dart';
-import 'package:namer_app/src/app/routes/app_router.gr.dart';
 import 'package:namer_app/src/app/pages/home/home_page_view.dart';
+import 'package:namer_app/src/app/pages/todo/todo_page_view.dart';
+import 'package:namer_app/src/core/autoroutes/routes.gr.dart';
 
 @AutoRouterConfig()      
 class AppRouter extends $AppRouter {      

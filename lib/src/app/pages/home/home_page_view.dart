@@ -15,20 +15,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
-              actions: [
-                // if (state.selectedDisassembly != null)
-                //   FormButtonDelete(onDelete: () {
-                //     handleDelete(context);
-                //     context.router.pop();
-                //   })
-              ],
-              // leading: FormBackButton(onNavigate: () => context.router.pop()),
-              titleSpacing: 16.0,
-              title: const Text('My Home Page'),
-            ),
-            drawer: const Navigation(),
-            body: Text('Home Page')
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
+      drawer: MainPage(),
+      body: const Center(
+        child: Text('Home'),
+      ),
     );
     }
   }
